@@ -1,0 +1,84 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="")
+        meta(name="author" content="")
+        link(rel="icon" href="/img/favicon.ico")
+        link(href="/css/bootstrap.css" rel="stylesheet")
+        link(href="/css/ionicons.min.css" rel="stylesheet")
+        link(href="/css/style.css" rel="stylesheet")
+
+        script(src='/js/jquery.min.js')
+        script(src='/js/bootstrap.min.js')
+    body
+        nav.navbar.navbar-default(style="background-color:#a0af0a;")
+            .container
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar-collapse', aria-expanded='false')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    .logo
+                        a.navbar-brand(href='/home')
+                            img(src='/images/logo.png' style="width: 30px; height: 30px;")
+                            | &nbsp;#{title}
+                #navbar-collapse.collapse.navbar-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li.dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                                if user.local.username
+                                    | #{user.local.username}
+                                else if user.facebook.name
+                                    | #{user.facebook.name}
+                                else if user.twitter.displayName
+                                    | #{user.twitter.displayName}
+                                else if user.google.email || user.google.name
+                                    | e: #{user.google.email}
+                                    | n: #{user.google.name}
+
+
+
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='/profile')
+                                        i.ion-person
+                                        | &nbsp;Profile
+                                li
+                                    a(href='/api/services')
+                                        i.ion-gear-a
+                                        | &nbsp;Services
+                                li
+                                    a(href='/api/tokens')
+                                        i.ion-gear-a
+                                        | &nbsp;Tokens
+                                li.divider(role='separator')
+                                li
+                                    a(href='/logout')
+                                        i.ion-unlocked
+                                        | &nbsp;Logout
+
+        block content
+
+        #footer
+            .container
+                .row.centered
+                    .col-md-12
+                        a(href="mailto:ricardo.mendes@ua.pt").btn-white
+                            i.ion-email
+                        | &nbsp;&nbsp;&nbsp;
+                        a(href="https://www.facebook.com/ricardomendex").btn-white
+                            i.ion-social-facebook
+                        | &nbsp;&nbsp;&nbsp;
+                        a(href="https://www.linkedin.com/profile/view?id=241021409").btn-white
+                            i.ion-social-linkedin
+                        | &nbsp;&nbsp;&nbsp;
+                        a(href="https://github.com/rdrm2014").btn-white
+                            i.ion-social-github
+                        a(href='http://www.ua.pt').btn-white
+                            i.ion-university

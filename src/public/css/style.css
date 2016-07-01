@@ -1,0 +1,147 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+* {
+    margin: 0;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: #fff;
+    margin: 0;
+    color: #5a5a5a;
+}
+
+h1, h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+p {
+    padding: 0;
+    margin-bottom: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    color: #666;
+    margin-top: 10px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.centered {
+    text-align: center
+}
+
+.mt {
+    margin-top: 50px;
+}
+
+::-moz-selection {
+    color: #fff;
+    text-shadow: none;
+    background: #2B2E31;
+}
+
+::selection {
+    color: #fff;
+    text-shadow: none;
+    background: #2B2E31;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    -webkit-transition: background-color .4s linear, color .4s linear;
+    -moz-transition: background-color .4s linear, color .4s linear;
+    -o-transition: background-color .4s linear, color .4s linear;
+    -ms-transition: background-color .4s linear, color .4s linear;
+    transition: background-color .4s linear, color .4s linear;
+    color: #A0AF0A;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #696E74;
+}
+
+.btn-white {
+    color: #FFFFFF;
+}
+
+.btn-white:hover {
+    color: #47B189;
+}
+
+.btn-clear:hover {
+    background: white;
+    color: #2f2f2f;
+}
+
+.dmbutton:hover,
+.dmbutton:focus {
+    color: #ffffff;
+    background-color: #222222;
+    border-color: #ffffff;
+}
+
+#header {
+    background: url(../images/header.jpg) no-repeat center top;
+    padding-top: 5px;
+    background-position: center center;
+    min-height: 700px;
+    width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+#header .logo {
+    margin-top: 30px;
+    margin-left: 40px;
+    padding-bottom: 50px;
+}
+
+#header .mt i {
+    font-size: 50px;
+}
+
+.portfolio-item .title:before {
+    border-radius: 0;
+    display: none
+}
+
+#footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #A0AF0A;
+}
+
+#footer i {
+    margin-right: 30px;
+    font-size: 35px;
+}

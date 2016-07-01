@@ -1,0 +1,40 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="")
+        meta(name="author" content="")
+        link(rel="icon" href="/img/favicon.ico")
+        link(href="/css/bootstrap.css" rel="stylesheet")
+        link(href="/css/ionicons.min.css" rel="stylesheet")
+        link(href='/css/style.css' rel='stylesheet')
+
+        script(src='/js/jquery.min.js')
+        script(src='/js/bootstrap.min.js')
+    body
+        #header
+            .logo
+                img(src='/images/logo.png' style="width: 80px; height: 80px;")
+
+            block content
+
+        #footer
+            .container
+                .row.centered
+                    .col-md-12
+                        a(href="mailto:ricardo.mendes@ua.pt").btn-white
+                            i.ion-email
+                        | &nbsp;&nbsp;&nbsp;
+                        a(href="https://www.facebook.com/ricardomendex").btn-white
+                            i.ion-social-facebook
+                        | &nbsp;&nbsp;&nbsp;
+                        a(href="https://www.linkedin.com/profile/view?id=241021409").btn-white
+                            i.ion-social-linkedin
+                        | &nbsp;&nbsp;&nbsp;
+                        a(href="https://github.com/rdrm2014").btn-white
+                            i.ion-social-github
+                        a(href='http://www.ua.pt').btn-white
+                            i.ion-university

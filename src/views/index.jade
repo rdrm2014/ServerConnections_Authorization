@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .container.centered
+        .row
+            .col-md-12
+                h1= title
+        .row.mt
+            .col-sm-8.col-md-offset-2
+                .row
+                    .col-sm-4
+                        a(href='/login').btn-white
+                            i.ion-locked
+                            br
+                            | Local Login
+                    .col-sm-4
+                        a(href='/signup').btn-white
+                            i.ion-locked
+                            br
+                            | Local Signup
+                    .col-sm-4
+                        a(href='/auth/facebook').btn-white
+                            i.ion-social-facebook
+                            br
+                            | Facebook
+                .row
+                    .col-sm-4
+                        a(href='/auth/twitter').btn-white
+                            i.ion-social-twitter
+                            br
+                            | Twitter
+                    .col-sm-4
+                        a(href='/auth/google').btn-white
+                            i.ion-social-googleplus
+                            br
+                            | Google+

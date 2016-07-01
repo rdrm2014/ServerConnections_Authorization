@@ -1,0 +1,43 @@
+extends ../../layout-home
+
+block content
+    .container
+        .row
+            .col-md-12
+                ol.breadcrumb
+                    li
+                        a(href="/home") Home
+                    li
+                        a(href="/api/tokens") Token
+                    li.active addtoken
+        hr
+        .row
+            .col-md-12
+                table(class="table table-nonfluid")
+                    tr
+                        td
+                            b Action
+                        td
+                            b Name Service
+                        td
+                            b Name Setup
+                        td
+                            b priceStrategy
+                        each service in services
+                            tr
+                                form(action="/api/tokens/addtoken" method="post")
+                                    td
+                                        input(type="submit" value="+")
+                                    td #{service.name}
+                                        input(type="hidden" name="serviceId" value=service._id)
+                                    td
+                                        .form-group
+                                            input(type="text" class="form-control" placeholder='nameSetup' name="nameSetup")
+
+                                    if service.priceStrategy
+                                        td
+                                            .btn-group(data-toggle='buttons')
+                                                each strategy in service.priceStrategy
+                                                    label.btn.btn-primary
+                                                        input(type='checkbox', autocomplete='off', name='priceStrategy' value=strategy)
+                                                        | #{strategy}

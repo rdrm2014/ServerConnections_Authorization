@@ -1,0 +1,72 @@
+extends ../../layout-home
+block content
+    .container
+        .row
+            .col-md-12
+                ol.breadcrumb
+                    li
+                        a(href="/home") Home
+                    li
+                        a(href="/api/services") Services
+                    li.active Add Services
+                form(action="/api/services/addservice" method="post")
+                    .form-group
+                        label Name
+                        input(type="text" class="form-control" placeholder='name' name="name")
+                    .form-group
+                        label serviceSecret
+                        input(type="text" class="form-control" placeholder='serviceSecret' name="serviceSecret")
+                    .form-group
+                        label urlCallback
+                        input(type="text" class="form-control" placeholder='urlCallback' name="urlCallback")
+                    .form-group
+                        label priceStrategy
+                        .input-group
+                            input.form-control(type='text' placeholder='priceStrategy' id="strategy")
+                            span.input-group-btn
+                                button.btn.btn-success.add-more(type='button' onclick='addPriceStrategy()') +
+                    .form-group
+                        ul#priceStrategy(style="list-style-type: none;")
+
+                    button(type="submit") Add Service
+                hr
+    script.
+        function addPriceStrategy() {
+            var strategy = $("#strategy").val();
+            //var entry = document.createElement('li');
+            //entry.appendChild(document.createTextNode(firstname));
+            //$("#priceStrategy").append(entry);
+            $("#priceStrategy").append($("<li>" +
+                    "<div class='input-group'>" +
+                    "<input class='input' autocomplete='off' name='priceStrategy' value='" + strategy + "' type='text'>" +
+                    "<button class='btn btn-danger add-more' type='button' onclick='this.parentNode.parentNode.remove()'>-" +
+                    "</div>" +
+                    "</li>"));
+        }
+    //script.
+        $(document).ready(function() {
+            var next = 1;
+            $(".add-more").click(function (e) {
+                e.preventDefault();
+                var addto = "#field" + next;
+                var addRemove = "#field" + (next);
+                next = next + 1;
+                var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+                var newInput = $(newIn);
+                var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+                var removeButton = $(removeBtn);
+                $(addto).after(newInput);
+                $(addRemove).after(removeButton);
+                $("#field" + next).attr('data-source', $(addto).attr('data-source'));
+                $("#count").val(next);
+
+                $('.remove-me').click(function (e) {
+                    e.preventDefault();
+                    var fieldNum = this.id.charAt(this.id.length - 1);
+                    var fieldID = "#field" + fieldNum;
+                    $(this).remove();
+                    $(fieldID).remove();
+                });
+                console.log(next);
+            });
+        });

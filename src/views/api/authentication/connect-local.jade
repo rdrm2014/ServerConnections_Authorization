@@ -1,0 +1,13 @@
+extends ../../layout
+block content
+	.container.centered
+		.row
+			.col-md-8.col-md-offset-2
+				form(action="/connect/local" method="post")
+					.form-group
+						label Username
+						input(type="text" class="form-control" name="username" placeholder="Username")
+					.form-group
+						label Password
+						input(type="password" class="form-control" name="password" placeholder="Password")
+					button(type="submit") Signup

@@ -1,0 +1,31 @@
+extends ../../layout
+
+block content
+	.container.centered
+		.row
+			.col-md-8.col-md-offset-2
+				form(action="/login" method="post")
+					.form-group
+						label Username
+						input(type="text" class="form-control" name="username" placeholder="Username")
+					.form-group
+						label Password
+						input(type="password" class="form-control" name="password" placeholder="Password")
+					if(message !='')
+						div.alert.alert-danger(role="alert")
+							h5= message
+					button.btn.btn-default.btn-lg(type="submit")
+						i.ion-locked
+						| &nbsp;Login
+					hr
+		.row
+			.col-md-6.centered
+				a(href="/signup")
+					button.btn.btn-default.btn-lg
+						i.ion-locked
+						| &nbsp;Signup
+			.col-md-6.centered
+				a(href="/")
+					button.btn.btn-default.btn-lg
+						i.ion-home
+						| &nbsp;Home

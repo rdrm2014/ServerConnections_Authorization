@@ -1,0 +1,42 @@
+{
+  "title": "Authorization",
+  "port": 8080,
+  "security": {
+    "tokenLife": 3600
+  },
+  "mongoose": {
+    "uri": "mongodb://localhost/serverConnections",
+    "port": 1883
+  },
+  "authentication": {
+    "uri": "http://localhost",
+    "port": 8080
+  },
+  "default": {
+    "api": {
+      "version": "v1"
+    }
+  },
+
+  "configAuth": {
+    "localAuth": {
+      "callbackSuccess": "/home",
+      "callbackError": "/login"
+    },
+    "facebookAuth": {
+      "clientID": "544032339084378",
+      "clientSecret": "bd505fd022875a926ab89b4b0f2f5c21",
+      "callbackURL": "http://localhost:8080/auth/facebook/callback"
+    },
+    "twitterAuth": {
+      "consumerKey": "Qe2yQCsFXvsOic1Ti8vKAVZ7i",
+      "consumerSecret": "frfS0ApmmGOsQIe4TcUVlMF4hnDKlFxKzrcDK0NSoVSofIFyg7",
+      "callbackURL": "http://localhost:8080/auth/twitter/callback"
+    },
+    "googleAuth": {
+      "clientID": "your-secret-clientID-here",
+      "clientSecret": "your-client-secret-here",
+      "callbackURL": "http://localhost:8080/auth/google/callback"
+    }
+  }
+}
