@@ -98,7 +98,7 @@ passport.use(new BearerStrategy(
 
             var info = {scopes: token.scopes};
 
-            console.log("INFO: " + info);
+            //console.log("INFO: " + info);
             done(null, true, info);
         });
     }));
